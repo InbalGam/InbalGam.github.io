@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    opacity: 0.9;
+}
+
+body {
+    font-family: Helvetica;
+    font-size: 22px;
+    font-weight: bold;
+    color: seashell;
+    background-color: black;
+}
+
+.header {
+    border-bottom: 1px solid seashell;
+    background-color: black;
+    top: 0;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo-img {
+    height: 50px;
+    margin-left: 10px;
+}
+
+.header .navigation {
+    width: 350px;
+    margin-right: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .navigation a {
+    text-decoration: underline;
+    color: seashell;
+}
+
+.banner {
+    position: relative;
+    top: 69px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner img {
+    height: 700px;
+}
+
+.banner .banner-txt {
+    position: absolute;
+    background-color: black;
+    text-align: center;
+    width: 1200px;
+    height: 130px;
+    z-index: 1;
+}
+
+.tea .tea-imgs figure img {
+    width: 300px;
+    height: 200px;
+}
+
+.tea {
+    position: relative;
+    width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.tea-txt {
+    position: relative;
+    text-align: center;
+    margin: auto;
+}
+
+.tea .tea-imgs {
+    position: relative;
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+figcaption {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.locations {
+    position: relative;
+    margin: auto;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.locations h2 {
+    position: absolute;
+    color: white;
+    z-index: 1;
+    margin-bottom: 400px;
+}
+
+.location-img {
+    height: 500px;
+    width: 1100px;
+}
+
+.location {
+    height: 300px;
+    width: 300px;
+    background-color: black;
+    z-index: 1;
+    text-align: center;
+}
+
+.location-boxes {
+    position: absolute;
+    height: 300px;
+    width: 1000px;
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    opacity: 1;
+    line-height: 2;
+}
+
+.footer-text {
+    position: relative;
+    height: 200px;
+    margin: auto;
+    text-align: center;
+}
+
+.copyrights {
+    text-align: left;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
