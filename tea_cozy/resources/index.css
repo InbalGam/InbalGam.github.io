@@ -46,6 +46,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1 1200px;
 }
 
 .banner img {
@@ -87,6 +88,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: auto;
+    flex: 1 300px;
 }
 
 figcaption {
@@ -102,6 +104,7 @@ figcaption {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1 1100px;
 }
 
 .locations h2 {
