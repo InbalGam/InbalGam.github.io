@@ -1,0 +1,164 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+/*Header section*/
+.header {
+    width: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    position: fixed;
+    background-color: aliceblue;
+    z-index: 9999;
+    padding-bottom: 2rem;
+}
+
+.header nav a {
+    padding-right: 1rem;
+    font-size: 1.25rem;
+}
+
+/*Banner section*/
+.banner {
+    position: relative;
+    top: 8rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner img {
+    width: 100%;
+    height: 30rem;
+}
+
+.banner-txt {
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    font-style: normal;
+    background-color: rgba(27, 32, 33, 75%);
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+    height: 9rem;
+}
+
+.banner-txt h2 {
+    margin: 0;
+}
+
+.banner-txt h4 {
+    margin: 1rem;
+}
+
+/*Products section*/
+.products {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    margin-top: 9rem;
+}
+
+.products-txt {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.products-imgs {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-shrink: 1;
+}
+
+.products-imgs img {
+    height: 25rem;
+}
+
+.products-imgs figcaption {
+    text-align: center;
+}
+
+.products-imgs figcaption a {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+/*Team section*/
+.team {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    margin-top: 10rem;
+}
+
+.team-txt {
+    position: relative;
+    text-align: center;
+    margin: auto;
+}
+
+.team-txt h3 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.team-txt h4 {
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.team-imgs img {
+    height: 21rem;
+}
+
+.team-imgs {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-shrink: 1;
+}
+
+.team-imgs figcaption {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    align-self: center;
+}
+
+/*Footer section*/
+.footer {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    margin-top: 10rem;
+    text-align: center;
+}
+
+/*Copyrights section*/
+.copyrights {
+    margin-left: 2rem;
+}
