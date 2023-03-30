@@ -1,0 +1,210 @@
+body {
+    background-color: burlywood;
+    margin: 0;
+}
+
+/*Navigation*/
+.navigation {
+    height: 4rem;
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+}
+.navigation .nav1 a {
+    margin-left: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    color: brown;
+    font-size: 1.5rem;
+    padding-right: 2rem;
+}
+
+.navigation .nav2 {
+    display: none;
+}
+
+@media only screen and (max-width: 450px) {
+    .navigation .nav1 {
+        display: none;
+    }
+
+    .navigation .nav2 {
+        display: block;
+    }
+
+    .navigation .nav2 a {
+        margin-left: 1rem;
+        text-decoration: none;
+        cursor: pointer;
+        color: brown;
+        font-size: 1rem;
+        padding-right: 0.25rem;
+    }
+}
+
+/*Banner*/
+.main-heading {
+    position: relative;
+    top: 6.25rem;
+    background-color: #9f2854;
+    height: 3rem;
+}
+
+.main-heading h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    padding-top: 0.25rem;
+}
+
+/*Activities*/
+.activities {
+    position: relative;
+    top: 17rem;
+    width: 100%;
+}
+
+.activity-txt {
+    position: relative;
+    font-size: 1.75rem;
+    margin-left: 1rem;
+}
+
+h3 {
+    font-size: 1.9rem;
+    margin-left: 1rem;
+    font-weight: normal;
+}
+
+.activity-imgs {
+    position: relative;
+    top: 300px;
+    display: flex;
+    column-gap: 0.625rem;
+}
+
+.activity-imgs img {
+    width: 30%;
+    margin: 1.5%;
+    height: 20%;
+}
+
+.activity-imgs .img1 {
+    height: 60rem;
+}
+
+.activity-imgs .img2 {
+    align-self: center;
+}
+
+@media only screen and (max-width: 450px) {
+    h3 {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .activity-txt {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .activity-imgs {
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .activity-imgs img {
+        width: 50%;
+        margin: 1.5%;
+        height: 20rem;
+    }
+
+    .activity-imgs .img1 {
+        width: 50%;
+        height: 20rem;
+    }
+
+    .activity-imgs .img2 {
+        width: 75%;
+    }
+}
+
+/*Quote*/
+.quote {
+    position: relative;
+    top: 30rem;
+    margin-left: 10%;
+}
+
+.quote p {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.quote .name {
+    font-style: italic;
+}
+
+.quote-imgs {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    top: 40rem;
+    width: 100%;
+}
+
+.quote-imgs img {
+    height: 50rem;
+    margin: auto;
+}
+
+@media only screen and (max-width: 450px) {
+    .quote-imgs {
+        flex-direction: column;
+        row-gap: 0.625rem;
+    }
+}
+
+/*Navigation2*/
+.navigation2 {
+    position: relative;
+    bottom: 0;
+    height: 4rem;
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    top: 60rem;
+}
+.navigation2 .nav1 a {
+    margin-left: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    color: brown;
+    font-size: 1.5rem;
+    padding-right: 2rem;
+}
+
+.navigation2 .nav2 {
+    display: none;
+}
+
+@media only screen and (max-width: 450px) {
+    .navigation2 .nav1 {
+        display: none;
+    }
+
+    .navigation2 .nav2 {
+        display: block;
+    }
+
+    .navigation2 .nav2 a {
+        margin-left: 1rem;
+        text-decoration: none;
+        cursor: pointer;
+        color: brown;
+        font-size: 1rem;
+        padding-right: 0.25rem;
+    }
+}
