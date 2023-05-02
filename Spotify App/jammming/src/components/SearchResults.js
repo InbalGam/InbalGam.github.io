@@ -5,7 +5,7 @@ function Results(props) {
         <div className="search-results">
             <h2>Results</h2>
             <ul>
-            <Tracklist tracks={props.resList} button={'+'}/>
+            <Tracklist tracks={props.tracks} button={'+'} onButtonClick={props.onButtonClick} />
             </ul>
         </div>
     );

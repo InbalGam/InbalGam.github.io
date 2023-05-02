@@ -1,23 +1,53 @@
-import logo from './logo.svg';
 import './App.css';
 import SearchBar from './components/SearchBar';
 import Results from './components/SearchResults';
 import { useState } from 'react';
 import Playlist from './components/Playlist';
+import {generateId} from './components/utilities';
 
 function App() {
-  //const [isAdded, setIsAdded] = useState(false);
-  //const [isRemoved, setIsRemoved] = useState([{}]);
+  const [tracks, setTracks] = useState([
+    {
+      id: generateId(),
+      songName: 'trial',
+      artist: 'bla bla',
+      album: '123'
+    },
+    {
+      id: generateId(),
+      songName: 'Griddy',
+      artist: 'blues',
+      album: 'hello'
+    }
+  ]);
+  const [playTracks, setPlayTracks] = useState([
+    {
+      id: generateId(),
+      songName: 'trial',
+      artist: 'bla bla',
+      album: '123'
+    }
+  ]);
 
-  let resList = [{songName:"bla bla", artist:"Beatles", album:"123"}, {songName:"bla bla doo doo", artist:"Britney", album:"hello"}];
-  let chosen = [{songName:"blues", artist:"Griddy", album:"123sss"}, {songName:"bla bla doo doo", artist:"Britney", album:"hello"}];
+
+  function addTrackToPlaylist(track) {
+    setPlayTracks((prev) => [track, ...prev]);
+    setTracks((tracks) => tracks.filter((el) => el.id !== track.id));
+  };
+  
+
+  function removeTrackFromPlaylist(track) {
+    setPlayTracks((playTracks) => playTracks.filter((el) => el.id !== track.id));
+    setTracks((prev) => [track, ...prev]);
+  };
+
 
   return (
     <div className="App">
       <body className="App-body">
         <SearchBar />
-        <Results resList={resList}/>
-        <Playlist chosen={chosen}/>
+        <Results tracks={tracks} onButtonClick={addTrackToPlaylist} />
+        <Playlist tracks={playTracks} onButtonClick={removeTrackFromPlaylist} />
       </body>
     </div>
   );

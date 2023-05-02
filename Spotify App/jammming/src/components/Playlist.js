@@ -5,7 +5,7 @@ function Playlist(props) {
         <div className="playlist">
             <h2>Playlist</h2>
             <ul>
-            <Tracklist tracks={props.chosen} button={'-'}/>
+            <Tracklist tracks={props.tracks} button={'-'} onButtonClick={props.onButtonClick} />
             </ul>
             <button> Save to Playlist </button>
         </div>
