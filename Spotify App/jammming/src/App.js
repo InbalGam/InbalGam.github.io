@@ -7,6 +7,8 @@ import Playlist from './components/Playlist';
 
 function App() {
   //const [isAdded, setIsAdded] = useState(false);
+  //const [isRemoved, setIsRemoved] = useState([{}]);
+
   let resList = [{songName:"bla bla", artist:"Beatles", album:"123"}, {songName:"bla bla doo doo", artist:"Britney", album:"hello"}];
   let chosen = [{songName:"blues", artist:"Griddy", album:"123sss"}, {songName:"bla bla doo doo", artist:"Britney", album:"hello"}];
 
