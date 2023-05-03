@@ -1,3 +1,5 @@
+import searchSpotify from '../Spotify'
+
 function SearchBar() {
     return (
         <div className="search-bar">
