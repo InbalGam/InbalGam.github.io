@@ -12,15 +12,27 @@ function App() {
   const [playTracks, setPlayTracks] = useState([]);
 
 
-  function getTracks(resultsTracks) {
-    let convertResults = resultsTracks.tracks.items.map((el) => {
-      return {
-        id: generateId(),
-        songName: el.name,
-        artist: el.artists[0].name,
-        album: el.album.name,
-        uri: el.uri
-      }});
+  function getTracks(searchResults) {
+    let convertResults;
+    if (searchResults.tracks) {
+      convertResults = searchResults.tracks.items.map((el) => {
+        return {
+          id: generateId(),
+          type: 'Track',
+          songName: el.name,
+          artist: el.artists[0].name,
+          album: el.album.name,
+          uri: el.uri
+        }});
+    } else if (searchResults.artists) {
+      convertResults = searchResults.artists.items.map((el) => {
+        return {
+          id: generateId(),
+          type: 'Artist',
+          artist: el.name,
+          uri: el.uri
+        }});
+    }
     setTracks(() => convertResults);
   };
 
