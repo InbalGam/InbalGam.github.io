@@ -6,33 +6,23 @@ import Playlist from './components/Playlist';
 import {generateId} from './components/utilities';
 
 function App() {
-  const [tracks, setTracks] = useState([
-    {
-      id: generateId(),
-      songName: 'trial',
-      artist: 'bla bla',
-      album: '123',
-      uri: 'ddd'
-    },
-    {
-      id: generateId(),
-      songName: 'Griddy',
-      artist: 'blues',
-      album: 'hello',
-      uri: 'ddd'
-    }
-  ]);
+  const [tracks, setTracks] = useState([]);
 
 
-  const [playTracks, setPlayTracks] = useState([
-    {
-      id: generateId(),
-      songName: 'trial',
-      artist: 'bla bla',
-      album: '123',
-      uri: 'ddd'
-    }
-  ]);
+  const [playTracks, setPlayTracks] = useState([]);
+
+
+  function getTracks(resultsTracks) {
+    let convertResults = resultsTracks.tracks.items.map((el) => {
+      return {
+        id: generateId(),
+        songName: el.name,
+        artist: el.artists[0].name,
+        album: el.album.name,
+        uri: el.uri
+      }});
+    setTracks(() => convertResults);
+  };
 
 
   function addTrackToPlaylist(track) {
@@ -46,6 +36,7 @@ function App() {
     setTracks((prev) => [track, ...prev]);
   };
 
+
   function reset() {
     setPlayTracks([]);
   };
@@ -54,7 +45,7 @@ function App() {
   return (
     <div className="App">
       <body className="App-body">
-        <SearchBar />
+        <SearchBar getTracks={getTracks} />
         <Results tracks={tracks} onButtonClick={addTrackToPlaylist} />
         <Playlist tracks={playTracks} onButtonClick={removeTrackFromPlaylist} reset={reset} />
       </body>
