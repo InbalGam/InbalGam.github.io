@@ -11,21 +11,26 @@ function App() {
       id: generateId(),
       songName: 'trial',
       artist: 'bla bla',
-      album: '123'
+      album: '123',
+      uri: 'ddd'
     },
     {
       id: generateId(),
       songName: 'Griddy',
       artist: 'blues',
-      album: 'hello'
+      album: 'hello',
+      uri: 'ddd'
     }
   ]);
+
+
   const [playTracks, setPlayTracks] = useState([
     {
       id: generateId(),
       songName: 'trial',
       artist: 'bla bla',
-      album: '123'
+      album: '123',
+      uri: 'ddd'
     }
   ]);
 
@@ -41,13 +46,17 @@ function App() {
     setTracks((prev) => [track, ...prev]);
   };
 
+  function reset() {
+    setPlayTracks([]);
+  };
+
 
   return (
     <div className="App">
       <body className="App-body">
         <SearchBar />
         <Results tracks={tracks} onButtonClick={addTrackToPlaylist} />
-        <Playlist tracks={playTracks} onButtonClick={removeTrackFromPlaylist} />
+        <Playlist tracks={playTracks} onButtonClick={removeTrackFromPlaylist} reset={reset} />
       </body>
     </div>
   );
