@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import {searchSpotify} from '../Spotify';
-import Select from 'react-select'
+import Select from 'react-select';
+import styles from '../components/styles/SearchBar.css';
 
 function SearchBar(props) {
     const [text, setText] = useState('');
@@ -25,12 +26,12 @@ function SearchBar(props) {
 
 
     return (
-        <div className="search-bar">
-            <form onSubmit={search}>
-                <label for='search'>Search for music </label>
-                <input id='search' type='text' value={text} onChange={handleTextChange} name='search' />
-                <Select defaultValue={options[0]} options={options} onChange={handleSelectChange} />
-                <input type="submit" value="Submit" />
+        <div className="search_bar">
+            <form onSubmit={search} >
+                <label for='search' >Search for music </label>
+                <input id='search' type='text' value={text} onChange={handleTextChange} name='search'/>
+                <Select defaultValue={options[0]} options={options} onChange={handleSelectChange} className='select' />
+                <input type="submit" value="Submit" className='submit' />
             </form>
         </div>
     );

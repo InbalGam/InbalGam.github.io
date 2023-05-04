@@ -1,0 +1,14 @@
+.search_results {
+    position: relative;
+    margin-top: 4rem;
+}
+
+p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fdd1ac;
+}
+
+ul {
+    list-style-type: none;
+}

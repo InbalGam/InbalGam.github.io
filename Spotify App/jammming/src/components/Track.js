@@ -1,8 +1,10 @@
+import styles from '../components/styles/Track.css';
+
 function Track(props) {
     return (
         <div className="track">
-            <h2>{props.type === 'Track' ? props.songName : props.artist}</h2>
-            <h3>{props.type === 'Artist' ? '' : props.artist + ' | ' + props.album}</h3>
+            <p className="songName">{props.type === 'Track' ? props.songName : props.artist}</p>
+            <p className="artist_album">{props.type === 'Artist' ? '' : props.artist + ' | ' + props.album}</p>
         </div>
     );
 };

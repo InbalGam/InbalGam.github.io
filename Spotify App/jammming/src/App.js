@@ -74,7 +74,7 @@ function App() {
   return (
     <div className="App">
       <body className="App-body">
-        <div className='main_div' style={styles.main_div}>
+        <div className='main_div'>
           {token === '' ?
           <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent('playlist-modify-public playlist-modify-private')}`}>Login to Spotify</a>
           :
