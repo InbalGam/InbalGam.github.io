@@ -3,7 +3,7 @@ import { useState } from "react";
 import {addToPlaylist, createPlaylist} from '../Spotify';
 
 function Playlist(props) {
-    const [text, setText] = useState('Playlist Name');
+    const [text, setText] = useState('');
 
     function handleTextChange(e) {
         setText(e.target.value);
@@ -21,7 +21,7 @@ function Playlist(props) {
 
     return (
         <div className="playlist">
-            <input id='playlistName' type='text' name='playlist' value={text} onChange={handleTextChange} />
+            <input id='playlistName' type='text' name='playlist' value={text} placeholder={'Playlist name'} onChange={handleTextChange} />
             <ul>
             <Tracklist tracks={props.tracks} button={'-'} onButtonClick={props.onButtonClick} />
             </ul>
