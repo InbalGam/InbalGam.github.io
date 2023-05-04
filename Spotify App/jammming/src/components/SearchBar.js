@@ -29,7 +29,7 @@ function SearchBar(props) {
         <div className="search_bar">
             <form onSubmit={search} >
                 <label for='search' >Search for music </label>
-                <input id='search' type='text' value={text} onChange={handleTextChange} name='search'/>
+                <input id='search' type='text' value={text} onChange={handleTextChange} name='search' className='search_input'/>
                 <Select defaultValue={options[0]} options={options} onChange={handleSelectChange} className='select' />
                 <input type="submit" value="Submit" className='submit' />
             </form>
