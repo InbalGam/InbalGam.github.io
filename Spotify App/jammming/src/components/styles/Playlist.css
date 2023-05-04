@@ -4,11 +4,13 @@
     margin-left: 4rem;
     display: inline-block;
     margin-bottom: 4rem;
-    padding: 0.18rem 0.3rem;
+    padding: 1rem 2.5rem;
     border: 0.06rem solid #3d1e4a;
     border-radius: 0.375rem;
     box-sizing: border-box;
     font-size: 1.15rem;
+    background-color: #b28a9c;
+    box-shadow: 10px 5px 5px #866875;
 }
 
 .playlist_input {
@@ -16,7 +18,7 @@
     font-size: 1.75rem;
     color: #2f0c3d;
     width: 70%;
-    background-color: #ae89ea;
+    background-color: #b28a9c;
     border: none;
     border-bottom:1px solid #2f0c3d;
 }
