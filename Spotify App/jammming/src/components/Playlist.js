@@ -17,6 +17,7 @@ function Playlist(props) {
         let playlistID = await createPlaylist(text, props.token);
         addToPlaylist(savedTracks, playlistID, props.token);
         props.reset();
+        setText('');
     };
 
 
