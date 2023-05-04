@@ -25,8 +25,6 @@ function App() {
   //////////////////////////////////////////////////////////////////////////////
 
   const [tracks, setTracks] = useState([]);
-
-
   const [playTracks, setPlayTracks] = useState([]);
 
 
@@ -80,8 +78,10 @@ function App() {
           :
           <div>
             <SearchBar getTracks={getTracks} token={token} />
-            <Results tracks={tracks} onButtonClick={addTrackToPlaylist} />
-            <Playlist tracks={playTracks} onButtonClick={removeTrackFromPlaylist} reset={reset} token={token} />
+            <div className='results_playlist'>
+              <Results tracks={tracks} onButtonClick={addTrackToPlaylist} />
+              <Playlist tracks={playTracks} onButtonClick={removeTrackFromPlaylist} reset={reset} token={token} />
+            </div>
           </div>
           }
         </div>

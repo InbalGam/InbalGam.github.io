@@ -2,11 +2,9 @@ body {
     background-color: #ae89ea;
 }
 
-.main_div {
+.results_playlist {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-flow: column;
 }
 
 a {

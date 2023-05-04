@@ -1,12 +1,20 @@
 .search_results {
     position: relative;
-    margin-top: 4rem;
+    margin-top: 10rem;
+    margin-bottom: 4rem;
+    margin-right: 100px;
+    padding: 3px 5px;
+    display: inline-block;
+    border: 1px solid #3d1e4a;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-size: 1.15rem;
 }
 
 p {
     font-size: 2rem;
     font-weight: bold;
-    color: #fdd1ac;
+    color: #2f0c3d;
 }
 
 ul {

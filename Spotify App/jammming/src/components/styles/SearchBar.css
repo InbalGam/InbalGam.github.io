@@ -1,8 +1,9 @@
 .search_bar {
-    position: relative;
-    width: auto;
+    text-align: center;
+    width: 20%;
     height: 10.5rem;
     top: 1rem;
+    margin-left: 40%; 
 }
 
 label {

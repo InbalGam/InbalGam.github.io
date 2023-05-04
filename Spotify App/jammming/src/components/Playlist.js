@@ -1,6 +1,7 @@
 import Tracklist from "./Tracklist";
 import { useState } from "react";
 import {addToPlaylist, createPlaylist} from '../Spotify';
+import styles from '../components/styles/Playlist.css';
 
 function Playlist(props) {
     const [text, setText] = useState('');
@@ -21,11 +22,11 @@ function Playlist(props) {
 
     return (
         <div className="playlist">
-            <input id='playlistName' type='text' name='playlist' value={text} placeholder={'Playlist name'} onChange={handleTextChange} />
+            <input id='playlistName' type='text' name='playlist' value={text} placeholder={'Playlist name'} onChange={handleTextChange} className="playlist_input"/>
             <ul>
             <Tracklist tracks={props.tracks} button={'-'} onButtonClick={props.onButtonClick} />
             </ul>
-            <button onClick={saveTracks}> Save to Playlist </button>
+            <button onClick={saveTracks} className="saveButton"> Save to Playlist </button>
         </div>
     );
 };
