@@ -1,11 +1,29 @@
 import './App.css';
 import SearchBar from './components/SearchBar';
 import Results from './components/SearchResults';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Playlist from './components/Playlist';
 import {generateId} from './components/utilities';
+import styles from './components/styles/App.css';
 
 function App() {
+  // Authentication to Spotify-
+  const CLIENT_ID = '0206e171414f4fe28aa42635cb40721e';
+  const REDIRECT_URI = "http://localhost:3000";
+  const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
+  const RESPONSE_TYPE = "token";
+  
+  const [token, setToken] = useState("");
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+    let token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1];
+    setToken(token);
+    }
+  }, []);
+  
+  //////////////////////////////////////////////////////////////////////////////
+
   const [tracks, setTracks] = useState([]);
 
 
@@ -53,13 +71,20 @@ function App() {
     setPlayTracks([]);
   };
 
-
   return (
     <div className="App">
       <body className="App-body">
-        <SearchBar getTracks={getTracks} />
-        <Results tracks={tracks} onButtonClick={addTrackToPlaylist} />
-        <Playlist tracks={playTracks} onButtonClick={removeTrackFromPlaylist} reset={reset} />
+        <div className='main_div' style={styles.main_div}>
+          {token === '' ?
+          <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent('playlist-modify-public playlist-modify-private')}`}>Login to Spotify</a>
+          :
+          <div>
+            <SearchBar getTracks={getTracks} token={token} />
+            <Results tracks={tracks} onButtonClick={addTrackToPlaylist} />
+            <Playlist tracks={playTracks} onButtonClick={removeTrackFromPlaylist} reset={reset} token={token} />
+          </div>
+          }
+        </div>
       </body>
     </div>
   );

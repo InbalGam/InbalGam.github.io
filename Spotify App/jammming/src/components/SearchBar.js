@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import searchSpotify from '../Spotify';
+import {searchSpotify} from '../Spotify';
 import Select from 'react-select'
 
 function SearchBar(props) {
@@ -14,7 +14,7 @@ function SearchBar(props) {
 
     async function search(event) {
        event.preventDefault();
-       const results = await searchSpotify(text, searchType);
+       const results = await searchSpotify(text, searchType, props.token);
        props.getTracks(results);
     };
 

@@ -1,25 +1,26 @@
 import Tracklist from "./Tracklist";
 import { useState } from "react";
+import {addToPlaylist, createPlaylist} from '../Spotify';
 
 function Playlist(props) {
-    const [text, setText] = useState('');
+    const [text, setText] = useState('Playlist Name');
 
     function handleTextChange(e) {
         setText(e.target.value);
     };
 
 
-    function saveTracks(event) {
+    async function saveTracks(event) {
         let savedTracks = [];
         savedTracks = props.tracks.map((el) => el.uri);
-        console.log('Your playlist was saved.');
+        let playlistID = await createPlaylist(text, props.token);
+        addToPlaylist(savedTracks, playlistID, props.token);
         props.reset();
-    }
+    };
 
 
     return (
         <div className="playlist">
-            <label htmlFor="playlistName">Playlist</label>
             <input id='playlistName' type='text' name='playlist' value={text} onChange={handleTextChange} />
             <ul>
             <Tracklist tracks={props.tracks} button={'-'} onButtonClick={props.onButtonClick} />
