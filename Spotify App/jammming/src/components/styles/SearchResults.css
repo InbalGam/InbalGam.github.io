@@ -13,6 +13,10 @@
     box-shadow: 10px 5px 5px #866875;
 }
 
+.results_p {
+    width: 325px;
+}
+
 p {
     font-size: 2rem;
     font-weight: bold;
