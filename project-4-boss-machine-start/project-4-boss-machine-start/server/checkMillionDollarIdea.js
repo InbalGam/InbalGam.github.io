@@ -1,15 +1,13 @@
-// Original starting code-
-// const checkMillionDollarIdea = () => {
+const checkMillionDollarIdea = (req, res, next) => {
+    if (!req.body.numWeeks || !req.body.weeklyRevenue || !Number(req.body.numWeeks) || !Number(req.body.weeklyRevenue)) {
+        return res.status(400).send();
+    }
 
-// };
-
-// My code-
-const checkMillionDollarIdea = (req, res, next, idea) => {
-    const multiply = idea.numWeeks * idea.weeklyRevenue;
-    if (multiply >= 1000000) {
-        return true;
+    const multiply = Number(req.body.numWeeks) * Number(req.body.weeklyRevenue);
+    if (multiply >= 1_000_000) {
+        next();
     } else {
-        return false;
+        res.status(400).send();
     };
 };
 
