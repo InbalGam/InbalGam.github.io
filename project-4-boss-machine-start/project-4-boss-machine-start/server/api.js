@@ -196,20 +196,20 @@ apiRouter.put('/minions/:minionId/work/:workId', (req, res, next) => {
     }
 
     const minion = getFromDatabaseById('minions', req.params.minionId);
-    if (minion !== undefined) {
-        if (req.params.minionId === req.body.minionId) {
-            const updatedInstance = updateInstanceInDatabase('work', req.body);
-            if (!updatedInstance) {
-                res.status(404).send();
-            } else {
-                res.send(updatedInstance);
-            }
-        } else {
-            res.status(400).send(); 
-        }
-    } else {
-        res.status(404).send();
+    if (minion === undefined) {
+        return res.status(404).send();
     }
+    
+    if (req.params.minionId !== req.body.minionId) {
+        return res.status(400).send();
+    }
+
+    const updatedInstance = updateInstanceInDatabase('work', req.body);
+    if (!updatedInstance) {
+        return res.status(404).send();
+    } 
+    
+    res.send(updatedInstance);
 });
 
 // delete a single work by id
