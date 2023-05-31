@@ -3,22 +3,8 @@ const apiRouter = express.Router();
 const { getAllFromDatabase, getFromDatabaseById, addToDatabase, deleteFromDatabasebyId, createMeeting, deleteAllFromDatabase, updateInstanceInDatabase, getWorkFromDatabaseById, createWork } = require('./db');
 const checkMillionDollarIdea = require('./checkMillionDollarIdea');
 
-// apiRouter.param('type', (req, res, next, type) => {
-
-// });
-
-
-// const getAll = (type) => {
-//     apiRouter.get(`/${type}`, (req, res, next) => {
-//         const data = getAllFromDatabase(type);
-//         res.send(data);
-//     });
-// };
-
-
 // Minions
 // get an array of all minions
-//getAll('minions');
 apiRouter.get('/minions', (req, res, next) => {
     const data = getAllFromDatabase('minions');
     res.send(data);
